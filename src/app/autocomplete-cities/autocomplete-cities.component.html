@@ -1,0 +1,15 @@
+<form [formGroup]='citiesForm'>
+    <mat-form-field style="width: 50%;">
+        <input matInput placeholder="Choose a city" [matAutocomplete]="auto" formControlName='userInputData'>
+    </mat-form-field>
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn.bind(this)">
+        <mat-option *ngIf="isLoading"  class="is-loading"><mat-spinner diameter="50"></mat-spinner></mat-option>
+        <ng-container *ngIf="!isLoading" >
+        <mat-option *ngFor="let city of citiesList" [value]="city">
+           
+            <span>{{city?.LocalizedName}} | {{city?.Country?.LocalizedName}}</span>
+            <small> | ID: {{city.Key}}</small>
+        </mat-option>
+        </ng-container>
+    </mat-autocomplete>
+</form> 

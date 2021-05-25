@@ -1,0 +1,11 @@
+<div *ngIf="forcast.length > 0" class="forcast">
+        <div style="text-decoration: underline;">Next 5 Days:</div>
+        <div [ngStyle]="{'background-color': f==maxTempetureItem ? 'gray' : ''} "  *ngFor="let f of forcast" class="day">
+          <div style="font-weight: bold;">{{f.Date | date}}</div>
+          Day: {{f.Day.IconPhrase}}
+          <br/>
+          Night: {{f.Night.IconPhrase}}
+          <br/>
+          Max: {{f.Temperature.Maximum.Value}}{{f.Temperature.Maximum.Unit}} | Min: {{f.Temperature.Minimum.Value}}{{f.Temperature.Minimum.Unit}}
+        </div>
+      </div> 

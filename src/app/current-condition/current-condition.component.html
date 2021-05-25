@@ -1,0 +1,6 @@
+<div *ngIf="currentCondition">
+        <span style="font-weight: bold;">Current weather in {{cityName}}:</span>
+        {{currentCondition?.WeatherText}} - <span *ngIf="displayC">{{currentCondition?.Temperature?.Metric?.Value}}{{currentCondition?.Temperature?.Metric?.Unit}}</span>
+        <span *ngIf="!displayC">{{currentCondition?.Temperature?.Imperial?.Value}}{{currentCondition?.Temperature?.Imperial?.Unit}}</span>
+        <button type="button"  class="mat-focus-indicator mat-stroked-button mat-button-base mat-primary" (click)="change(displayC)">change from C to F</button>
+      </div>

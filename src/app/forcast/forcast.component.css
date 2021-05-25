@@ -1,0 +1,17 @@
+.forcast {
+    display: inline-block;
+    width: 100%;
+}
+
+.day {
+    display: inline-block;
+    margin: 1%;
+    border: 0.1em solid;
+    width: calc(10% - 0.2em);
+    padding: 1%;
+    font-size: 1.3vw !important;
+    line-height: 3;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+} 
