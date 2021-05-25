@@ -1070,30 +1070,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, AppService);
 
         this.http = http;
-        this.baseUrl = "http://localhost:49238/api/"; //  key="zY5mgzGL376ZuxbfDGlhO4NhKOOfdNaZ";
-        //key="9GWwBEJiViCpuWXfRjb7w6yDuX4fec6d";
-
         this.key = "DH6v2sA1Y3hI7KKkG9VSSNdNxAF1uft3";
       }
 
       _createClass(AppService, [{
         key: "getLocations",
         value: function getLocations(query) {
-          return this.http.get("http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=" + this.key + "&q=" + query + "&language=en-us", {
+          return this.http.get("https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=" + this.key + "&q=" + query + "&language=en-us", {
             withCredentials: true
           });
         }
       }, {
         key: "getCurrentCondition",
         value: function getCurrentCondition(cityKey) {
-          return this.http.get("http://dataservice.accuweather.com/currentconditions/v1/" + cityKey + "?apikey=" + this.key + "&language=en-us&details=false", {
+          return this.http.get("https://dataservice.accuweather.com/currentconditions/v1/" + cityKey + "?apikey=" + this.key + "&language=en-us&details=false", {
             withCredentials: true
           });
         }
       }, {
         key: "getForecast",
         value: function getForecast(cityKey) {
-          return this.http.get("http://dataservice.accuweather.com/forecasts/v1/daily/5day/" + cityKey + "?apikey=" + this.key + "&language=en-us&details=false&metric=true", {
+          return this.http.get("https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + cityKey + "?apikey=" + this.key + "&language=en-us&details=false&metric=true", {
             withCredentials: true
           });
         }
